@@ -1,0 +1,13 @@
+def showyh(n):
+     v=[[1],[1,1]]
+     for i in range(3,n+1):
+          vi=[1]
+          s=len(v[i-2])
+          for k in range(s-1):
+               vi.append(v[i-2][k]+v[i-2][k+1])
+          vi.append(1)
+          v.append(vi)
+     for i in range(len(v)):
+          v[i]=[str(j) for j in v[i]]
+     for vi in v:
+          print('\t'.join(vi))

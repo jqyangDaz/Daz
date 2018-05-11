@@ -1,0 +1,11 @@
+n=input()
+count={}
+for i in n:
+     count.setdefault(i,0)
+     count[i]=count[i]+1
+sum=0
+for t in count.keys():
+     sum=int(count[t])*int(t)+sum
+print(sum)
+p={'1':'yi','2':'er','3':'san','4':'si','5':'wu','6':'liu','7':'qi','8':'ba','9':'jiu','0':'ling'}
+a=list(str(sum))

@@ -1,0 +1,20 @@
+n=int(input())
+inputValue=input().split()
+inputValue=[int(i) for i in inputValue]
+beCovered=[False for i in range(101)]
+for t in inputValue:
+     while t!=1:
+          if t%2==1:
+               t=(3*t+1)//2
+          else:
+               t=t//2
+          if t<=100:
+               beCovered[t]=True
+output=[]
+for i in inputValue:
+     if beCovered[i]==False:
+          output.append(i)
+output.sort(reverse=True)
+out=[str(i) for i in output]
+for l in len(output):
+     print(output[l],sep=' ')

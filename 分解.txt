@@ -1,0 +1,30 @@
+import math
+def isprime(n):
+    if n<=1:
+        return False
+    else:
+        for i in range(2,int(math.sqrt(n))+1):
+            if n%i==0:
+                return False
+        return True
+def DeConstruct(n):
+    print(str(n)+'=',end='')
+    i=2
+    isFirst=True
+    while True:
+        if not isprime(i):
+            i=i+1
+            continue
+        while n!=1:
+            if n%i==0:
+                if isFirst:
+                    print(i,end='')
+                    isFirst=False
+                else:
+                    print('*',i,sep='',end='')
+                n=n//i
+            else:
+                i=i+1
+                break
+        if n==1:
+            break

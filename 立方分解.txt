@@ -1,0 +1,22 @@
+def cal(n):
+     i=1
+     while True:
+          sum=0
+          j=i
+          while sum<n**3:
+               sum=sum+j
+               if sum==n**3:
+                    print(n,'^3=',sep='',end='')
+                    if i==j:
+                         print(i)
+                         return
+                    else:
+                         print(i,end='')
+                         i=i+2
+                         while i<=j:
+                              print('+',i,sep='',end='')
+                              i=i+2
+                         return
+               else:
+                    j=j+2
+          i=i+2

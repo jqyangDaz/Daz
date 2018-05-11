@@ -1,0 +1,28 @@
+import math
+from sympy import *
+n=int(input())
+pv=float(input())
+def f(x):
+     i=0
+     fx=0-pv
+     while True:
+          if i==n:
+               fx=fx+(100/(1+x)**i)
+               return fx
+               break
+          else:
+               i=i+1
+               fx=fx+(4/(1+x)**(i-0.5))+(4/(1+x)**i)
+def df(x):
+     dx=0.0000001
+     dfx=(f(x+dx)-f(x))/dx
+     return dfx
+r0=float(input())
+r1=r0-(f(r0)/df(r0))
+while True:
+     if abs(r0-r1)/r0>(1/10000):
+          r0=r1
+          r1=r0-(f(r0)/df(r0))
+     else:
+          print(r1)
+          break
